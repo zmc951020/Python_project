@@ -1,0 +1,18 @@
+**结论**
+- `C:\Program Files\Everything` 是 Voidtools 的 `Everything` 安装目录，它是 Windows 上的超快本地文件名搜索工具。
+- 它不是“自动打通连接、自动部署”的插件；名字也不是 “Everywhere”。
+
+**它能做什么**
+- 以极快速度按“文件名”搜索整盘文件，几乎即时返回结果。
+- 可运行为服务（`EverythingService`），支持开机索引与后台运行。
+- 提供命令行客户端 `es.exe` 以及可选的 HTTP 服务器与 IPC 接口，方便被其它软件调用。
+
+**可能混淆的点**
+- MCP 是一种“协议/扩展机制”，和 `Everything` 不是同一类东西。有人会做“基于 MCP 的 Everything 服务器”，让 IDE/助手通过 MCP 调用 `Everything` 做文件搜索，但那仍然只是搜索，不是自动部署。
+- “Everywhere”通常不是这款软件的名称，可能是你听到的别的工具或误称。
+
+**如何使用**
+- 直接运行 `C:\Program Files\Everything\Everything.exe`，等待初次索引完成后输入关键字即可搜索。
+- 需要集成到脚本或工具时可用命令行：例如 `C:\Program Files\Everything\es.exe "keyword"`；或在“工具 → 选项”里开启 HTTP 服务器以提供 Web/API 调用。
+
+如果你需要“自动部署”的能力，通常应考虑 CI/CD（如 `GitHub Actions`、`GitLab CI`、`Jenkins`、`Vercel`、`Netlify`、`Ansible` 等），与 `Everything` 的定位不同。
